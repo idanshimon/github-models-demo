@@ -10,22 +10,33 @@ Start building AI apps **today** using GitHub Models. No Azure environment neede
 
 ## Quick Start
 
+### macOS / Linux
+
 ```bash
-# 1. Clone and setup
-git clone <this-repo>
+git clone https://github.com/idanshimon/github-models-demo.git
 cd github-models-demo
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# 2. Run the basic demo
 GITHUB_TOKEN=$(gh auth token) python3 demo.py
-
-# 3. Run the streaming demo
 GITHUB_TOKEN=$(gh auth token) python3 demo_streaming.py
-
-# 4. Run the repoint demo (GitHub → Azure swap)
 GITHUB_TOKEN=$(gh auth token) python3 demo_repoint.py
+```
+
+### Windows (PowerShell)
+
+```powershell
+git clone https://github.com/idanshimon/github-models-demo.git
+cd github-models-demo
+python -m venv .venv
+.venv\Scripts\Activate
+pip install -r requirements.txt
+
+$env:GITHUB_TOKEN = gh auth token
+python demo.py
+python demo_streaming.py
+python demo_repoint.py
 ```
 
 ## What's Inside
@@ -81,19 +92,38 @@ Full model list: [GitHub Copilot Model Comparison](https://docs.github.com/en/co
 ## The Repoint Story
 
 ### Phase 1: Now (GitHub Models)
+
+macOS/Linux:
+```bash
+GITHUB_TOKEN=$(gh auth token) AI_PROVIDER=github python3 demo_repoint.py
 ```
-AI_PROVIDER=github python3 demo_repoint.py
+
+Windows (PowerShell):
+```powershell
+$env:GITHUB_TOKEN = gh auth token
+$env:AI_PROVIDER = "github"
+python demo_repoint.py
 ```
 - Zero Azure dependency
 - Zero infrastructure
 - Devs are productive immediately
 
 ### Phase 2: When Azure is ready
-```
+
+macOS/Linux:
+```bash
 AI_PROVIDER=azure \
   AZURE_OPENAI_ENDPOINT=https://your-endpoint.openai.azure.com \
   AZURE_OPENAI_KEY=your-key \
   python3 demo_repoint.py
+```
+
+Windows (PowerShell):
+```powershell
+$env:AI_PROVIDER = "azure"
+$env:AZURE_OPENAI_ENDPOINT = "https://your-endpoint.openai.azure.com"
+$env:AZURE_OPENAI_KEY = "your-key"
+python demo_repoint.py
 ```
 - Same code, same prompts
 - Add App Gateway / WAF / APIM as needed for enterprise
