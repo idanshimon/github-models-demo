@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Segoe UI, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="ghGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#238636"/>
+      <stop offset="100%" style="stop-color:#1a7f37"/>
+    </linearGradient>
+    <linearGradient id="azGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0078d4"/>
+      <stop offset="100%" style="stop-color:#005a9e"/>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6e40c9"/>
+      <stop offset="100%" style="stop-color:#553098"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" fill="#f0f6fc" font-size="26" font-weight="700">GitHub Models → Azure OpenAI: Zero-Waste Repoint Architecture</text>
+  <text x="600" y="70" text-anchor="middle" fill="#8b949e" font-size="14">Same SDK · Same Code · Same Prompts · One Config Change</text>
+
+  <!-- Phase Labels -->
+  <text x="310" y="108" text-anchor="middle" fill="#3fb950" font-size="18" font-weight="700">⚡ PHASE 1: NOW</text>
+  <text x="310" y="126" text-anchor="middle" fill="#8b949e" font-size="12">No Azure needed</text>
+
+  <text x="890" y="108" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="700">🏢 PHASE 2: PRODUCTION</text>
+  <text x="890" y="126" text-anchor="middle" fill="#8b949e" font-size="12">When Azure is ready</text>
+
+  <!-- Divider -->
+  <line x1="600" y1="95" x2="600" y2="640" stroke="#30363d" stroke-width="2" stroke-dasharray="8,6"/>
+  <text x="600" y="660" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="600">↕ ONE ENV VAR CHANGE ↕</text>
+
+  <!-- === LEFT SIDE: Phase 1 === -->
+
+  <!-- Developer Box -->
+  <rect x="60" y="150" width="200" height="90" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="100" y="180" fill="#f0f6fc" font-size="15" font-weight="600">👨‍💻 Developer</text>
+  <text x="100" y="200" fill="#8b949e" font-size="11">VS Code + OpenAI SDK</text>
+  <text x="100" y="218" fill="#8b949e" font-size="11">pip install openai</text>
+
+  <!-- App Code Box -->
+  <rect x="60" y="280" width="500" height="130" rx="10" fill="url(#codeGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="310" y="310" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">📦 Your App Code (NEVER CHANGES)</text>
+  <rect x="80" y="322" width="460" height="75" rx="6" fill="#0d1117" opacity="0.7"/>
+  <text x="95" y="343" fill="#79c0ff" font-size="12" font-family="Menlo, Consolas, monospace">client = OpenAI(</text>
+  <text x="95" y="361" fill="#ffa657" font-size="12" font-family="Menlo, Consolas, monospace">    base_url=<tspan fill="#a5d6ff">os.environ["BASE_URL"]</tspan></text>
+  <text x="95" y="379" fill="#ffa657" font-size="12" font-family="Menlo, Consolas, monospace">    api_key=<tspan fill="#a5d6ff">os.environ["API_KEY"]</tspan></text>
+  <text x="95" y="393" fill="#79c0ff" font-size="12" font-family="Menlo, Consolas, monospace">)</text>
+
+  <!-- GitHub Models Cloud -->
+  <rect x="130" y="460" width="360" height="100" rx="10" fill="url(#ghGrad)" filter="url(#shadow)"/>
+  <text x="175" y="495" fill="#f0f6fc" font-size="16" font-weight="700">🐙 GitHub Models</text>
+  <text x="175" y="515" fill="#d2f4d3" font-size="11">models.inference.ai.azure.com</text>
+  <text x="175" y="535" fill="#d2f4d3" font-size="11">GPT-5 mini (free) · Sonnet 4.6 · Opus 4.6</text>
+  <text x="175" y="548" fill="#d2f4d3" font-size="10">✅ Prompt caching · ✅ RAI filtering · ✅ Tool calling</text>
+
+  <!-- Arrow: Dev → Code -->
+  <line x1="160" y1="240" x2="160" y2="275" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Arrow: Code → GitHub Models -->
+  <line x1="310" y1="410" x2="310" y2="455" stroke="#3fb950" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="320" y="440" fill="#3fb950" font-size="11" font-weight="600">GITHUB_TOKEN</text>
+
+  <!-- === RIGHT SIDE: Phase 2 === -->
+
+  <!-- Developer Box (same) -->
+  <rect x="940" y="150" width="200" height="90" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="980" y="180" fill="#f0f6fc" font-size="15" font-weight="600">👨‍💻 Developer</text>
+  <text x="980" y="200" fill="#8b949e" font-size="11">VS Code + OpenAI SDK</text>
+  <text x="980" y="218" fill="#7ee787" font-size="11" font-weight="600">SAME CODE ✓</text>
+
+  <!-- Arrow: Dev → Code -->
+  <line x1="1040" y1="240" x2="1040" y2="275" stroke="#58a6ff" stroke-width="2"/>
+
+  <!-- App Code Box (same, linked) -->
+  <rect x="640" y="280" width="500" height="130" rx="10" fill="url(#codeGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="890" y="310" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">📦 Your App Code (IDENTICAL)</text>
+  <rect x="660" y="322" width="460" height="75" rx="6" fill="#0d1117" opacity="0.7"/>
+  <text x="675" y="343" fill="#79c0ff" font-size="12" font-family="Menlo, Consolas, monospace">client = OpenAI(</text>
+  <text x="675" y="361" fill="#ffa657" font-size="12" font-family="Menlo, Consolas, monospace">    base_url=<tspan fill="#a5d6ff">os.environ["BASE_URL"]</tspan></text>
+  <text x="675" y="379" fill="#ffa657" font-size="12" font-family="Menlo, Consolas, monospace">    api_key=<tspan fill="#a5d6ff">os.environ["API_KEY"]</tspan></text>
+  <text x="675" y="393" fill="#79c0ff" font-size="12" font-family="Menlo, Consolas, monospace">)</text>
+
+  <!-- Azure Stack -->
+  <rect x="640" y="460" width="160" height="100" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="660" y="490" fill="#58a6ff" font-size="13" font-weight="600">🛡️ App Gateway</text>
+  <text x="660" y="508" fill="#8b949e" font-size="10">+ WAF</text>
+  <text x="660" y="540" fill="#8b949e" font-size="10">Enterprise security</text>
+
+  <rect x="820" y="460" width="160" height="100" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="840" y="490" fill="#58a6ff" font-size="13" font-weight="600">🔀 API Management</text>
+  <text x="840" y="508" fill="#8b949e" font-size="10">Rate limiting, billing</text>
+  <text x="840" y="540" fill="#8b949e" font-size="10">Multi-tenant access</text>
+
+  <rect x="1000" y="460" width="160" height="100" rx="10" fill="url(#azGrad)" filter="url(#shadow)"/>
+  <text x="1020" y="490" fill="#f0f6fc" font-size="13" font-weight="700">☁️ Azure OpenAI</text>
+  <text x="1020" y="508" fill="#a5d6ff" font-size="10">your-endpoint.openai</text>
+  <text x="1020" y="526" fill="#a5d6ff" font-size="10">.azure.com</text>
+  <text x="1020" y="548" fill="#a5d6ff" font-size="10">Your tenant · Your data</text>
+
+  <!-- Arrows: Code → Azure Stack -->
+  <line x1="890" y1="410" x2="720" y2="455" stroke="#58a6ff" stroke-width="2"/>
+  <line x1="720" y1="520" x2="820" y2="510" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="980" y1="510" x2="1000" y2="510" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom callout -->
+  <rect x="200" y="600" width="800" height="50" rx="8" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="600" y="622" text-anchor="middle" fill="#f0883e" font-size="14" font-weight="700">🔑 The entire difference is ONE environment variable: BASE_URL</text>
+  <text x="600" y="640" text-anchor="middle" fill="#8b949e" font-size="12">Zero code changes · Zero wasted work · Zero dev downtime during Azure provisioning</text>
+
+</svg>
