@@ -1,6 +1,6 @@
 # GitHub Models — Zero Infrastructure AI Development
 
-![Architecture Diagram](architecture.png)
+![Architecture Diagram](architecture.svg)
 
 Start building AI apps **today** using GitHub Models. No Azure environment needed. When Azure is ready, change one env var.
 
